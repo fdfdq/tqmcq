@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东台市通泉门窗厂 - 专业门窗系统解决方案提供商</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #1a365d; /* 深蓝色 */
+            --secondary-color: #2d4a80; /* 中等蓝色 */
+            --accent-color: #4a72b5; /* 浅蓝色 */
+            --highlight-color: #e6a23c; /* 金色点缀 */
+            --light-color: #f5f7fa; /* 浅灰色背景 */
+            --text-color: #333333; /* 正文颜色 */
+            --white: #ffffff; /* 白色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--highlight-color);
+            margin: 15px auto 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--highlight-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--highlight-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #d1922e;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--highlight-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--highlight-color);
+        }
+        
+        .phone-number {
+            font-weight: 700;
+            color: var(--highlight-color);
+            font-size: 18px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--white);
+        }
+        
+        /* 首页Banner样式 */
+        .banner {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('banner.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+        
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .banner p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .banner-phone {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 30px 0;
+            color: var(--highlight-color);
+        }
+        
+        /* 核心优势样式 */
+        .advantages {
+            background-color: var(--light-color);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .advantage-item {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .advantage-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .advantage-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .advantage-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* 产品导航样式 */
+        .products-nav {
+            background-color: var(--white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .product-category {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+        
+        .product-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 150px;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 40px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-category h3 {
+            padding: 15px 10px;
+            font-size: 16px;
+            color: var(--primary-color);
+            background-color: var(--white);
+        }
+        
+        /* 案例展示样式 */
+        .cases {
+            background-color: var(--light-color);
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .case-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: var(--white);
+        }
+        
+        .case-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-img {
+            height: 250px;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            overflow: hidden;
+        }
+        
+        .case-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .case-content {
+            padding: 20px;
+            background-color: var(--white);
+        }
+        
+        .case-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--highlight-color);
+        }
+        
+        .footer-phone {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin: 10px 0;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .advantages-grid,
+            .products-grid,
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .banner h1 {
+                font-size: 36px;
+            }
+            
+            .banner p {
+                font-size: 18px;
+            }
+            
+            .banner-phone {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .advantages-grid,
+            .products-grid,
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="东台市通泉门窗厂">
+                东台市<span>通泉</span>门窗厂
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 首页Banner -->
+    <section class="banner">
+        <div class="container banner-content">
+            <h1>东台通泉门窗厂</h1>
+            <p>电动伸缩门/系统窗/断桥铝移门/全系列产品专家</p>
+            <div class="banner-phone">13770250772</div>
+            <a href="contact.html" class="btn btn-primary">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="section advantages">
+        <div class="container">
+            <h2 class="section-title">为什么选择通泉门窗？</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-boxes"></i></div>
+                    <h3>品类齐全，一站式采购</h3>
+                    <p>提供全系列门窗产品，满足不同场景需求</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>优质材料，坚固耐用</h3>
+                    <p>精选高品质材料，确保产品长久耐用</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>专业定制，精准服务</h3>
+                    <p>根据客户需求提供个性化定制解决方案</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主营产品 -->
+    <section class="section products-nav">
+        <div class="container">
+            <h2 class="section-title">主营产品</h2>
+            <div class="products-grid">
+                <div class="product-category" onclick="location.href='products.html#commercial'">
+                    <div class="product-img">
+                        <img src="product1.jpg" alt="电动伸缩门">
+                    </div>
+                    <h3>电动伸缩门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#commercial'">
+                    <div class="product-img">
+                        <img src="product2.jpg" alt="卷帘门">
+                    </div>
+                    <h3>卷帘门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#commercial'">
+                    <div class="product-img">
+                        <img src="product3.jpg" alt="感应门">
+                    </div>
+                    <h3>感应门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#windows'">
+                    <div class="product-img">
+                        <img src="product4.jpg" alt="系统窗">
+                    </div>
+                    <h3>系统窗</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#windows'">
+                    <div class="product-img">
+                        <img src="product5.jpg" alt="断桥铝移门">
+                    </div>
+                    <h3>断桥铝移门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#railings'">
+                    <div class="product-img">
+                        <img src="product6.jpg" alt="不锈钢栏杆">
+                    </div>
+                    <h3>不锈钢栏杆</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#railings'">
+                    <div class="product-img">
+                        <img src="product7.jpg" alt="铸铝栏杆">
+                    </div>
+                    <h3>铸铝栏杆</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#railings'">
+                    <div class="product-img">
+                        <img src="product8.jpg" alt="大门">
+                    </div>
+                    <h3>大门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#interior'">
+                    <div class="product-img">
+                        <img src="product9.jpg" alt="淋浴房">
+                    </div>
+                    <h3>淋浴房</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#interior'">
+                    <div class="product-img">
+                        <img src=product10.jpg" alt="中控吊趟门">
+                    </div>
+                    <h3>中控吊趟门</h3>
+                </div>
+                <div class="product-category" onclick="location.href='products.html#interior'">
+                    <div class="product-img">
+                        <img src="product11.jpg" alt="三联动推拉门">
+                    </div>
+                    <h3>三联动推拉门</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例展示 -->
+    <section class="section cases">
+        <div class="container">
+            <h2 class="section-title">精品案例</h2>
+            <div class="cases-grid">
+                <div class="case-item">
+                    <div class="case-img">
+                        <img src="case1.jpg" alt="电动伸缩门案例">
+                    </div>
+                    <div class="case-content">
+                        <h3>工厂电动伸缩门项目</h3>
+                        <p>电动伸缩门</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-img">
+                        <img src="case2.jpg" alt="断桥铝系统窗案例">
+                    </div>
+                    <div class="case-content">
+                        <h3>住宅断桥铝系统窗项目</h3>
+                        <p>断桥铝系统窗安装效果</p>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-img">
+                        <img src="case3.jpg" alt="不锈钢/铸铝栏杆案例">
+                    </div>
+                    <div class="case-content">
+                        <h3>别墅栏杆与大门项目</h3>
+                        <p>高端定制的不锈钢/铸铝栏杆应用案例</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>东台市通泉门窗厂</h3>
+                    <p>专业、高端、齐全的门窗系统解决方案提供商</p>
+                    <div class="footer-phone">13770250772</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="products.html#commercial">商用门系列</a></li>
+                        <li><a href="products.html#windows">系统门窗系列</a></li>
+                        <li><a href="products.html#railings">栏杆与大门系列</a></li>
+                        <li><a href="products.html#interior">淋浴房与室内门系列</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="products.html">产品中心</a></li>
+                        <li><a href="gallery.html">案例展示</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 地址：东台市XXX路XXX号</p>
+                    <p><i class="fas fa-phone"></i> 电话：13770250772</p>
+                    <p><i class="fas fa-envelope"></i> 邮箱：example@example.com</p>
+                    <p><i class="fas fa-clock"></i> 营业时间：8:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 东台市通泉门窗厂 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'var(--primary-color)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.backgroundColor = 'var(--primary-color)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
